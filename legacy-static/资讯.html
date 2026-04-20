@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ea8000",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9fe",
+                    "primary-container": "#003366",
+                    "on-primary-fixed": "#001b3c",
+                    "on-primary-container": "#799dd6",
+                    "secondary-container": "#0075d6",
+                    "inverse-surface": "#2f3034",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "on-tertiary-fixed": "#2f1500",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#004786",
+                    "secondary-fixed-dim": "#a5c8ff",
+                    "tertiary": "#331700",
+                    "surface-container-highest": "#e2e2e7",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1a1c1f",
+                    "outline-variant": "#c3c6d1",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dad9de",
+                    "secondary-fixed": "#d4e3ff",
+                    "surface-container": "#eeedf2",
+                    "inverse-primary": "#a7c8ff",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f4f3f8",
+                    "primary-fixed": "#d5e3ff",
+                    "outline": "#737780",
+                    "surface-bright": "#f9f9fe",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "primary": "#001e40",
+                    "surface-container-high": "#e8e8ed",
+                    "surface-variant": "#e2e2e7",
+                    "surface-tint": "#3a5f94",
+                    "on-secondary-container": "#fefcff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "secondary": "#005cab",
+                    "on-surface-variant": "#43474f",
+                    "inverse-on-surface": "#f1f0f5",
+                    "tertiary-container": "#512900",
+                    "on-background": "#1a1c1f",
+                    "surface": "#f9f9fe",
+                    "tertiary-fixed": "#ffdcc3",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#001c3a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', 'Noto Sans SC', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-md shadow-[0_12px_40px_rgba(0,30,64,0.08)]">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold text-blue-900 dark:text-blue-50 tracking-tighter">
+                CACEE 人工智能工作委员会
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Manrope'] font-semibold tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="index.html">首页</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="课程中心.html">课程中心</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 translate-y-[-1px]" href="资讯.html">新闻资讯</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="证书.html">职业认证</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="#">会员服务</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="#">资源对接</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-xl font-bold hover:shadow-lg transition-transform active:scale-95">
+                    立即加入
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-28 pb-20">
+<!-- Hero Search Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-2xl">
+<span class="text-secondary font-semibold tracking-widest text-xs uppercase mb-4 block">知识库</span>
+<h1 class="text-5xl font-extrabold text-primary tracking-tight mb-4">新闻资讯中心</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed">实时掌握AI教育动态、政策变革及协会最新举措，共同塑造技术学习的未来。</p>
+</div>
+<div class="w-full md:w-96 relative group">
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="搜索新闻、政策或报告..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+</div>
+</section>
+<!-- Category Filter Tabs -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-12">
+<div class="flex flex-wrap gap-4 items-center">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-medium text-sm transition-all shadow-md">最新动态</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">协会新闻</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">国家政策</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">研究报告</button>
+</div>
+</section>
+<!-- Featured News & Feed -->
+<section class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+<!-- Featured Content -->
+<div class="lg:col-span-7">
+<div class="relative rounded-2xl overflow-hidden group">
+<div class="aspect-[16/10] bg-slate-200">
+<img alt="Featured News" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern minimalist laboratory with clean blue lighting and futuristic AI interface screens displaying data and neural networks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiQ4JwfxJHQTQE0hAD10tzfOKWABpIufI0x6yrDYh_YWKmMmWHkQSxBtOGs9CdlvG9-nF5eyyvzqAXFCL6VuH1_xWK1l1426Oty-HhHdQJ7qHl1Q1KXFNs2rnqQMy4Rmz91VUbVu_2lRKFNi9wEklHwhhTYQ83nMWEcbBigU-rfJQ8KCKdcTqmcOBxSD9eOLpYbmuHzM8xJ5D2bZH8HOPSZvfK6ebjTExMclN8o6PIiNQG4GPjoUJvjSjCFp6VpuWr7q-R182lBRpD"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-8 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 bg-on-tertiary-container/10 backdrop-blur-md text-on-tertiary-container text-[10px] font-bold rounded-md uppercase tracking-wider">精选报告</span>
+<span class="text-white/70 text-sm font-medium">2024年10月24日</span>
+</div>
+<h2 class="text-3xl font-bold text-white mb-4 leading-tight max-w-xl">《国家高等教育人工智能战略：2025愿景路线图发布》</h2>
+<p class="text-white/80 text-base mb-6 max-w-xl">教育部概述了将生成式人工智能整合到技术课程和学术伦理标准中的新框架。</p>
+<a class="flex items-center gap-2 text-white font-bold group/link" href="#">
+                            阅读全文 
+                            <span class="material-symbols-outlined group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- News Feed -->
+<div class="lg:col-span-5 space-y-12">
+<div class="group cursor-pointer">
+<div class="flex justify-between items-start mb-3">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">协会新闻</span>
+<span class="text-xs text-outline">2天前</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2 group-hover:text-secondary transition-colors">2024 AI创新论坛即将在京举行</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">工作委员会宣布了今年论坛的主题：“以人为本的人工智能教育体系”。</p>
+</div>
+<div class="group cursor-pointer">
+<div class="flex justify-between items-start mb-3">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">研究报告</span>
+<span class="text-xs text-outline">2024年10月18日</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2 group-hover:text-secondary transition-colors">Q3 行业人才需求调查：AI素养成为核心</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">最新数据显示，市场对拥有经认证的AI胜任力毕业生的需求增长了45%。</p>
+</div>
+<div class="group cursor-pointer">
+<div class="flex justify-between items-start mb-3">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest">国家政策</span>
+<span class="text-xs text-outline">2024年10月12日</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-2 group-hover:text-secondary transition-colors">跨区域数据隐私指南出台</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">关于在教育环境中使用大型语言模型处理学生数据的修订条例。</p>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 border border-outline-variant rounded-xl text-on-surface font-semibold hover:bg-surface-container-low transition-colors">
+                        查看所有近期动态
+                    </button>
+</div>
+</div>
+</section>
+<!-- Policy Library (Horizontal Scrolling / Grid) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold text-primary mb-2">政策库</h2>
+<p class="text-on-surface-variant">监管文件、实施指南和权威政策的权威存储库。</p>
+</div>
+<button class="text-secondary font-bold flex items-center gap-1">
+                        浏览完整政策库 <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Policy Card -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6">description</span>
+<h3 class="text-lg font-bold text-on-surface mb-3">2024 AI伦理实施指南</h3>
+<p class="text-sm text-on-surface-variant mb-8 flex-grow">在职业技术培训机构中伦理部署人工智能的综合框架。</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="text-xs text-outline font-medium">PDF • 4.2 MB</span>
+<button class="flex items-center gap-2 text-secondary font-bold text-sm">
+                                下载 <span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Policy Card -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6">verified_user</span>
+<h3 class="text-lg font-bold text-on-surface mb-3">认证标准2.1: AI专业能力</h3>
+<p class="text-sm text-on-surface-variant mb-8 flex-grow">国家AI认证考试的更新标准，包括新的实验室实操要求。</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="text-xs text-outline font-medium">DOCX • 1.8 MB</span>
+<button class="flex items-center gap-2 text-secondary font-bold text-sm">
+                                下载 <span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Policy Card -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6">gavel</span>
+<h3 class="text-lg font-bold text-on-surface mb-3">国家技术培训法案2024</h3>
+<p class="text-sm text-on-surface-variant mb-8 flex-grow">关于技术院校人工智能基础设施资金支持的基础性立法文件。</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="text-xs text-outline font-medium">PDF • 12.5 MB</span>
+<button class="flex items-center gap-2 text-secondary font-bold text-sm">
+                                下载 <span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Research Reports Bento Section -->
+<section class="max-w-screen-2xl mx-auto px-8 py-24">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-primary mb-4">研究报告</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">对全国范围内人工智能应用演变及教育趋势的深度分析研究。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Large Report Card -->
+<div class="bg-primary text-white rounded-3xl overflow-hidden relative group">
+<div class="absolute inset-0 opacity-20">
+<img alt="White Paper Background" class="w-full h-full object-cover grayscale" data-alt="Conceptual data visualization with glowing charts and graphs against a dark blue high-tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWD0ufBsWkrco5gJtudmgyDMJJAqyQLmoSQQI5ULDUWImxmbG9XFSj4pKzLkMa88cHNgxDz-Tq4-WxKuvNCIZm7BD5uxh28xQO_9Lwtc0f3oOvYIletMOAoGRTnmalnHtqaY-MLhN7snLa8KjbSeeBOQZKVujnh3ZvG5mKcrJz2eCkexE4kqhtKIqcz8lFJQwya5W-NyFmCpxXVt2gev9NJCqnyx8RgNq5MgjBlidhHUHYMfPt8lc6WKNRIIa1vV4LwhXPGKWS0KL8"/>
+</div>
+<div class="relative p-12 h-full flex flex-col justify-between">
+<div class="mb-20">
+<span class="inline-block px-4 py-1 bg-secondary rounded-full text-xs font-bold mb-6 tracking-widest uppercase">旗舰报告</span>
+<h3 class="text-4xl font-bold mb-6 leading-tight">2024人工智能教育<br/>年度白皮书</h3>
+<p class="text-on-primary-container text-lg max-w-md">我们最全面的研究报告，涵盖了全国500多所技术机构对AI工具的采用情况。</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors">阅读原文</button>
+<button class="text-white font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">下载全文 <span class="material-symbols-outlined">arrow_right_alt</span></button>
+</div>
+</div>
+</div>
+<!-- Vertical Cards -->
+<div class="flex flex-col gap-8">
+<div class="bg-white border-l-8 border-secondary p-8 rounded-2xl shadow-sm flex items-center gap-8 group cursor-pointer hover:shadow-lg transition-shadow">
+<div class="w-24 h-24 bg-surface-container-low rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-4xl text-secondary">analytics</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors">工业AI趋势分析</h3>
+<p class="text-sm text-on-surface-variant mb-4">对领先制造企业采用的AI技术栈进行的季度审计报告。</p>
+<span class="text-xs font-bold text-secondary flex items-center gap-1">访问数据洞察 <span class="material-symbols-outlined text-sm">open_in_new</span></span>
+</div>
+</div>
+<div class="bg-white border-l-8 border-tertiary-fixed-dim p-8 rounded-2xl shadow-sm flex items-center gap-8 group cursor-pointer hover:shadow-lg transition-shadow">
+<div class="w-24 h-24 bg-surface-container-low rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container">psychology</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-primary mb-2 group-hover:text-secondary transition-colors">毕业生AI技能缺口报告</h3>
+<p class="text-sm text-on-surface-variant mb-4">识别学术AI课程与工业应用需求之间的脱节点。</p>
+<span class="text-xs font-bold text-secondary flex items-center gap-1">查看改进建议 <span class="material-symbols-outlined text-sm">open_in_new</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Subscription / Newsletter -->
+<section class="max-w-screen-2xl mx-auto px-8 pb-12">
+<div class="bg-surface-container-low rounded-[2rem] p-12 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="max-w-xl relative z-10">
+<h2 class="text-3xl font-bold text-primary mb-4">订阅我们的每周简报</h2>
+<p class="text-on-surface-variant text-lg">不错过任何重要动态，我们将最关键的新闻和政策更新直接发送到您的收件箱。</p>
+</div>
+<div class="w-full lg:w-auto flex flex-col md:flex-row gap-4 relative z-10">
+<input class="px-6 py-4 rounded-xl bg-white border-outline-variant/30 w-full md:w-80 focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="输入您的工作邮箱" type="email"/>
+<button class="bg-secondary text-white px-10 py-4 rounded-xl font-bold whitespace-nowrap shadow-md hover:bg-primary transition-colors">立即订阅</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-slate-100 dark:bg-slate-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="font-['Manrope'] font-bold text-blue-900 dark:text-blue-50 text-xl">CACEE AI 门户</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                    通过职业认证和战略政策对接，推进人工智能教育标准。
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-blue-900 dark:text-blue-300">快速链接</h4>
+<ul class="space-y-3 font-['Inter'] text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="课程中心.html">课程中心</a></li>
+<li><a class="font-bold text-blue-700 dark:text-blue-400" href="资讯.html">新闻资讯</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="证书.html">职业认证</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-blue-900 dark:text-blue-300">组织机构</h4>
+<ul class="space-y-3 font-['Inter'] text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">组织架构</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">协会标识</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">服务条款</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-blue-900 dark:text-blue-300">联系我们</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm">北京市海淀区大学科技园北翼</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-300">mail</span>
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-300">call</span>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-12 pb-8 flex flex-col md:flex-row justify-between items-center border-t border-slate-200 dark:border-slate-800 pt-8">
+<p class="font-['Inter'] text-xs text-slate-500 dark:text-slate-400">© 2024 CACEE 人工智能应用工作委员会。保留所有权利。</p>
+<div class="flex gap-6 mt-4 md:mt-0 font-['Inter'] text-xs">
+<a class="text-slate-500 hover:text-blue-900 transition-colors" href="#">隐私政策</a>
+<a class="text-slate-500 hover:text-blue-900 transition-colors" href="#">Cookie 设置</a>
+</div>
+</div>
+</footer>
+</body></html>

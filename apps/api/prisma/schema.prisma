@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  EDITOR
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum PostType {
+  NEWS
+  POLICY
+  REPORT
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(EDITOR)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model ContentPost {
+  id          String        @id @default(cuid())
+  type        PostType      @default(NEWS)
+  status      PublishStatus @default(DRAFT)
+  /// 列表/官网展示顺序，数值越小越靠前；默认 2147483647 表示未手动排序（排在后面）
+  sortOrder   Int           @default(2147483647)
+  title       String
+  slug        String        @unique
+  category    String?
+  tags        Json?
+  summary     String?       @db.Text
+  body        String?       @db.LongText
+  coverUrl    String?
+  seoTitle    String?
+  seoDesc     String?       @db.Text
+  seoKeywords String?
+  publishedAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([type, status, publishedAt])
+  @@index([status, sortOrder, updatedAt])
+}
+
+enum CourseLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+model Course {
+  id          String        @id @default(cuid())
+  status      PublishStatus @default(DRAFT)
+  title       String
+  slug        String        @unique
+  category    String?
+  tags        Json?
+  summary     String?       @db.Text
+  body        String?       @db.LongText
+  coverUrl    String?
+  level       CourseLevel   @default(BEGINNER)
+  industry    String?
+  credits     Int           @default(0)
+  durationWks Int           @default(0)
+  seoTitle    String?
+  seoDesc     String?       @db.Text
+  seoKeywords String?
+  publishedAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+}
+

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ea8000",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "background": "#f9f9fe",
+                      "primary-container": "#003366",
+                      "on-primary-fixed": "#001b3c",
+                      "on-primary-container": "#799dd6",
+                      "secondary-container": "#0075d6",
+                      "inverse-surface": "#2f3034",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb77d",
+                      "on-tertiary-fixed": "#2f1500",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#004786",
+                      "secondary-fixed-dim": "#a5c8ff",
+                      "tertiary": "#331700",
+                      "surface-container-highest": "#e2e2e7",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1a1c1f",
+                      "outline-variant": "#c3c6d1",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dad9de",
+                      "secondary-fixed": "#d4e3ff",
+                      "surface-container": "#eeedf2",
+                      "inverse-primary": "#a7c8ff",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f4f3f8",
+                      "primary-fixed": "#d5e3ff",
+                      "outline": "#737780",
+                      "surface-bright": "#f9f9fe",
+                      "on-primary-fixed-variant": "#1f477b",
+                      "primary": "#001e40",
+                      "surface-container-high": "#e8e8ed",
+                      "surface-variant": "#e2e2e7",
+                      "surface-tint": "#3a5f94",
+                      "on-secondary-container": "#fefcff",
+                      "primary-fixed-dim": "#a7c8ff",
+                      "on-tertiary-fixed-variant": "#6e3900",
+                      "secondary": "#005cab",
+                      "on-surface-variant": "#43474f",
+                      "inverse-on-surface": "#f1f0f5",
+                      "tertiary-container": "#512900",
+                      "on-background": "#1a1c1f",
+                      "surface": "#f9f9fe",
+                      "tertiary-fixed": "#ffdcc3",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#001c3a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background-color: #f9f9fe; }
+        h1, h2, h3 { font-family: 'Manrope', 'Noto Sans SC', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(249, 249, 254, 0.6); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/60 dark:bg-slate-950/60 backdrop-blur-md shadow-[0_12px_40px_rgba(0,30,64,0.08)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold text-blue-900 dark:text-blue-50 tracking-tighter font-['Manrope']">
+                CACEE 人工智能工作委员会
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] font-semibold tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="index.html">首页</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 transition-all duration-300" href="课程中心.html">课程中心</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="资讯.html">新闻资讯</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="证书.html">职业认证</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="#">会员服务</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-100 transition-all duration-300" href="#">资源对接</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-xl font-semibold transition-all duration-300 hover:translate-y-[-1px] shadow-lg">
+                    立即加入
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-8 max-w-screen-2xl mx-auto min-h-screen">
+<!-- Hero / Header Section -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-5xl font-extrabold text-primary tracking-tight mb-2">课程中心</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl">助力职业发展，获取行业认可的AI认证与专家引领的课程体系。</p>
+</div>
+<div class="w-full md:w-96">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-secondary-fixed transition-all text-on-surface" placeholder="搜索课程、工具或师资..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Advanced Filtering -->
+<div class="mt-10 p-6 bg-surface-container-low rounded-xl flex flex-wrap gap-8 items-center">
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">分类</span>
+<select class="bg-transparent border-none text-primary font-semibold focus:ring-0 cursor-pointer p-0 pr-8">
+<option>全部分类</option>
+<option>专业课程</option>
+<option>认证课程</option>
+</select>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">行业</span>
+<select class="bg-transparent border-none text-primary font-semibold focus:ring-0 cursor-pointer p-0 pr-8">
+<option>制造业</option>
+<option>医疗</option>
+<option>金融</option>
+<option>技术</option>
+</select>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="flex flex-col gap-2">
+<span class="text-xs font-bold uppercase tracking-widest text-outline">难度</span>
+<select class="bg-transparent border-none text-primary font-semibold focus:ring-0 cursor-pointer p-0 pr-8">
+<option>入门</option>
+<option>中级</option>
+<option>高级</option>
+</select>
+</div>
+<div class="ml-auto">
+<button class="flex items-center gap-2 text-secondary font-bold hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">filter_list</span>
+                        清除筛选
+                    </button>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Course Grid (8/12 cols) -->
+<div class="lg:col-span-9">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of glowing digital computer code on a dark screen representing artificial intelligence and python programming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH6Pst6LUTNmQRMFXOWuLm_G-14FUEye-EKC8YhEm2AuhlO1-1Pey9pZOJyWpxjOt1SBdIE7Nzmmx9aT_WZCpiv-MBM35BVvIYnI8I9g492AITxd2ctsUOa0GEfO0rJXAFUagxEiHM4BAVsU1Pyk0fAGAzskr8vvVu21tfcDcutxb_aC4iM9M29f3FIt6_CWCtpWeX7lDe8y6-6nDmvxC7iQo-HmLj9F3-_SwyXKT_N2MtvxFq7nwhuT4EhAT6oTpqZIzMoNVF8abR"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">通用</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-primary mb-3 leading-tight">AI通识：编程基础</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">掌握用于数据处理和AI建模的核心Python库，包括 NumPy 和 Pandas。</p>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>12周</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">school</span>
+<span>4 学分</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>讲师: Elena Rostova</span>
+</div>
+</div>
+<button onclick="window.location.href='课程详情页.html'" class="w-full bg-secondary text-on-secondary py-3 rounded-xl font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+                                了解更多
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern industrial factory setting with automated robotic arms and futuristic data overlays for machine learning industry concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX-txsY8bUdV24mYEGDKYp7dZP5SnF75bIsryMPGICS_T8YBtN9Gg4dWlOQ32kBDu9S8ZrsvmlB1UMDGj2wgokp2UQTUrB6kpQgBZy56N9aFjTHFzt-aVfF1wczRhsaInMLRGvzcJq2tWnEVecigrX8rI0gCkbxon1DW6UrxE84nxeVQnAdFIOwT_sm2VNXax5lEFSfXnor8tJCUwcrRDrBsLyVi06Pp_B2RwnMS1lpsR6gUIMJ45ZLn5HuQuG7NKzxfGM1_-PyXn5"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">行业</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-primary mb-3 leading-tight">工业系统中的机器学习</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">机器学习在预测性维护和供应链优化中的实施策略。</p>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>16周</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">school</span>
+<span>6 学分</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>讲师: Prof. Marcus Chen</span>
+</div>
+</div>
+<button onclick="window.location.href='课程详情页.html'" class="w-full bg-secondary text-on-secondary py-3 rounded-xl font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+                                了解更多
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sophisticated medical imaging scan with blue digital highlights showing computer vision analysis of human health data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDim9l_Nl_vE04V_gBi6w4zroXPNAlywqxBdaL8s8KPYXU9P5prXMBXzKoHI485zBAAeKWZFq8jyFei7qZjymjdaCpkeHbFdS6LOcWnKPVVR4KBKOD-OcPmJUlwyIKMCmEHDoPqdog_i6s-NdHAkgARZQoIToYXkWdux_ZEaO5As-WowfO1ER3_AVD76zkjiKludENRPbqpa2a2oJl5TAsI9NfrzPftaIA81qPCyijzpYIqZ5BizYvCENbp6gxB4QQt4__utH-ieJUf"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">专业</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-primary mb-3 leading-tight">医疗影像与AI诊断</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">针对放射学和临床决策支持中计算机视觉应用的高级课程。</p>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>20周</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">school</span>
+<span>8 学分</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-outline font-medium">
+<span class="material-symbols-outlined text-sm">person</span>
+<span>讲师: Sarah Jenkins</span>
+</div>
+</div>
+<button onclick="window.location.href='课程详情页.html'" class="w-full bg-secondary text-on-secondary py-3 rounded-xl font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 group-hover:translate-y-[-2px]">
+                                了解更多
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Load More / Pagination -->
+<div class="mt-16 flex justify-center">
+<button class="px-8 py-4 border border-outline-variant rounded-xl font-bold text-primary hover:bg-surface-container-low transition-colors">
+                        查看全部课程
+                    </button>
+</div>
+</div>
+<!-- Sidebar (3/12 cols) -->
+<aside class="lg:col-span-3 space-y-8">
+<!-- Learning Path Card -->
+<div class="bg-primary text-on-primary p-8 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-xl font-bold mb-4">学习路径</h4>
+<p class="text-primary-fixed-dim text-sm mb-6">定制化职业成长路径。</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-weight="fill">verified</span>
+                                AI开发路径
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-weight="fill">verified</span>
+                                业务战略路径
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-weight="fill">verified</span>
+                                伦理与治理
+                            </li>
+</ul>
+<a class="inline-flex items-center gap-2 text-secondary-fixed font-bold hover:underline" href="#">
+                            开始定制
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Decorative Gradient -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
+</div>
+<!-- Study Progress Card -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="text-primary font-bold mb-6">我的学习进度</h4>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-bold text-on-surface">证书追踪</span>
+<span class="text-xs font-bold text-secondary">65%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="space-y-4 pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<div class="text-xs font-bold text-on-surface">进行中课程</div>
+<div class="text-sm text-on-surface-variant">3 门课程正在学习</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">star</span>
+</div>
+<div>
+<div class="text-xs font-bold text-on-surface">已获得学分</div>
+<div class="text-sm text-on-surface-variant">14 / 30 学分</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-white text-primary border border-outline-variant py-3 rounded-xl font-bold text-sm shadow-sm hover:shadow-md transition-all">
+                            进入个人中心
+                        </button>
+</div>
+</div>
+<!-- Expert Support -->
+<div class="p-8 border-2 border-dashed border-outline-variant rounded-xl text-center">
+<span class="material-symbols-outlined text-4xl text-outline mb-4">support_agent</span>
+<h5 class="text-primary font-bold mb-2">需要指导？</h5>
+<p class="text-on-surface-variant text-xs mb-4">联系专家委员会获取学术建议。</p>
+<button class="text-secondary font-bold text-sm hover:underline">联系专家委员会</button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-slate-100 dark:bg-slate-900 w-full mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-screen-2xl mx-auto font-['Inter'] text-sm leading-relaxed">
+<div class="md:col-span-1">
+<div class="font-['Manrope'] font-bold text-blue-900 dark:text-blue-50 text-lg mb-6">CACEE AI 门户</div>
+<p class="text-slate-500 dark:text-slate-400 mb-6">引领人工智能在中国高等教育及行业应用中的融合与发展。</p>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-300 mb-6">导航</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">课程中心</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">职业认证</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">会员服务</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-300 mb-6">资源</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">新闻资讯</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">协会徽章</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">组织架构</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-900 dark:text-blue-300 mb-6">法律</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">联系我们</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">隐私政策</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-200 underline decoration-2 underline-offset-4 transition-all" href="#">服务条款</a></li>
+</ul>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-500 dark:text-slate-400">
+            © 2024 中国人工智能应用工作委员会 (CACEE AI). 版权所有.
+        </div>
+</footer>
+</body></html>
