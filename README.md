@@ -176,3 +176,27 @@ pnpm dev
 - 保留上一版镜像与数据库备份点
 - 若图片域名异常，先回退 `NEXT_IMAGE_REMOTE_PATTERNS` 与网关配置
 
+### 7) PM2（宝塔）：禁止 `pnpm start -- -p` 的旧写法
+
+若日志出现 `Invalid project directory ... apps/admin/-p`，说明 **`pnpm --dir ... start -- -p 3002` 被错误解析**：`-p` 被当成目录名。请改用其一：
+
+- **推荐**：仓库根目录使用自带配置（`cwd` 为各子应用，端口在 args 里）：
+
+```bash
+cd /path/to/Portal.AI
+pm2 delete portal-api portal-web portal-admin   # 若已有旧进程
+pm2 start ecosystem.config.cjs
+pm2 save
+```
+
+- **手工**：先 `cd` 到 `apps/admin` 或 `apps/web`，再执行（不要用 `--dir` 拼 `start --`）：
+
+```bash
+cd apps/admin && pnpm exec next start -p 3002 -H 0.0.0.0
+cd apps/web   && pnpm exec next start -p 3003 -H 0.0.0.0
+```
+
+官网 SSR 若出现 `fetch failed` / `ETIMEDOUT`，请在 **`apps/web/.env.local`** 增加 **`API_INTERNAL_BASE_URL=http://127.0.0.1:3001/api/v1`**（端口与 `API_PORT` 一致），重新 `pnpm --dir apps/web build` 后重启 `portal-web`。
+
+部署新版本后若浏览器报 **Failed to find Server Action**，请 **强制刷新页面（Ctrl+F5）** 或清空站点缓存，避免旧前端脚本对接新后端。
+
