@@ -200,3 +200,17 @@ cd apps/web   && pnpm exec next start -p 3003 -H 0.0.0.0
 
 部署新版本后若浏览器报 **Failed to find Server Action**，请 **强制刷新页面（Ctrl+F5）** 或清空站点缓存，避免旧前端脚本对接新后端。
 
+### 8) API：`Cannot find module ... dist/main`
+
+本项目 TypeScript 构建产物在 **`apps/api/dist/src/main.js`**（不是 `dist/main`）。线上必须先构建：
+
+```bash
+cd /path/to/Portal.AI
+pnpm --dir apps/api exec prisma generate
+pnpm --dir apps/api build
+test -f apps/api/dist/src/main.js && echo "API 构建 OK"
+pm2 restart portal-api
+```
+
+若已更新到包含修正的 `package.json`，`pnpm run start:prod` 会指向正确路径。
+
