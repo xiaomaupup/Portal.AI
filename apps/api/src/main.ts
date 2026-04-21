@@ -45,6 +45,8 @@ function buildCorsOptions(): CorsOptions {
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  // 让 Express 在反向代理（Nginx/Cloudflare）后正确识别协议与来源 IP。
+  app.set("trust proxy", 1);
   app.enableCors(buildCorsOptions());
   app.setGlobalPrefix("api/v1");
   app.useStaticAssets(join(process.cwd(), "uploads"), {
