@@ -154,8 +154,30 @@ pnpm dev
 
 - `/api/v1/*` 代理到 API 服务
 - 如仍使用本地磁盘模式，`/uploads/*` 必须可访问
-- CORS 允许 web/admin 域名访问 API
 - 上传请求体限制（`client_max_body_size`）不小于 5MB
+
+**跨域（admin/web 与 API 不同子域时必填）**
+
+1. 在 **`apps/api/.env`**（或服务器上 API 进程可读的环境变量）中设置，**逗号分隔、完整 origin、含 `https://`**：
+
+   `CORS_ORIGINS=https://admin-cy.wittywiz.cc,https://cy.wittywiz.cc`
+
+   然后重新构建并重启 API：`pnpm --dir apps/api build` → `pm2 restart portal-api`。
+
+2. **Nginx** 必须把 **OPTIONS 预检** 和 **普通请求** 都转发到本机 API（勿对 `/api/` 单独 `return 204` 而不转发）。示例：
+
+```nginx
+location /api/ {
+    proxy_pass http://127.0.0.1:3001;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
+若预检仍失败，可在服务器上对 API 域名执行：`curl -i -X OPTIONS "https://api-cy.wittywiz.cc/api/v1/admin/posts" -H "Origin: https://admin-cy.wittywiz.cc" -H "Access-Control-Request-Method: GET"`，应看到 **`204/200` 且带 `Access-Control-Allow-Origin`**；若此处已是 **502/504**，先修 Nginx/证书再谈 CORS。
 
 ### 4) 数据与兼容性
 
