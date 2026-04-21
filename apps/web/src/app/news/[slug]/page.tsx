@@ -5,6 +5,8 @@ import { postTypeLabel } from "@/lib/post-type-label";
 import { SiteShell } from "@/components/site/SiteShell";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewsDetailPage({
   params,
 }: {

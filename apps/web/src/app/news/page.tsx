@@ -4,6 +4,8 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site/SiteShell";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewsPage({
   searchParams,
 }: {

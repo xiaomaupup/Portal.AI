@@ -1,4 +1,11 @@
-import { Controller, Get, NotFoundException, Param, Query } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Header,
+  NotFoundException,
+  Param,
+  Query,
+} from "@nestjs/common";
 import { CourseService } from "./course.service";
 import { CourseLevel } from "@prisma/client";
 
@@ -7,6 +14,7 @@ export class CourseController {
   constructor(private readonly courses: CourseService) {}
 
   @Get()
+  @Header("Cache-Control", "no-store")
   async list(
     @Query("level") level?: CourseLevel,
     @Query("industry") industry?: string,
@@ -24,6 +32,7 @@ export class CourseController {
   }
 
   @Get(":slug")
+  @Header("Cache-Control", "no-store")
   async detail(@Param("slug") slug: string) {
     const course = await this.courses.getPublicBySlug(slug);
     if (!course) throw new NotFoundException("课程不存在或未发布");

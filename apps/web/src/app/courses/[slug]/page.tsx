@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getCourse } from "@/lib/api";
 import type { Course } from "@/lib/api";
 import { courseLevelLabel } from "@/lib/course-level-label";
 import { imageNeedsUnoptimized } from "@/lib/image-utils";
 import { SiteShell } from "@/components/site/SiteShell";
-import Image from "next/image";
 import { notFound } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 
 const HIGHLIGHT_ICONS = ["history_edu", "psychology", "factory", "gavel"] as const;
 

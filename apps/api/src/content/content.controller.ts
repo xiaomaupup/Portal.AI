@@ -1,4 +1,11 @@
-import { Controller, Get, NotFoundException, Param, Query } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Header,
+  NotFoundException,
+  Param,
+  Query,
+} from "@nestjs/common";
 import { ContentService } from "./content.service";
 import { PostType } from "@prisma/client";
 
@@ -7,6 +14,7 @@ export class ContentController {
   constructor(private readonly content: ContentService) {}
 
   @Get()
+  @Header("Cache-Control", "no-store")
   async list(
     @Query("type") type?: PostType,
     @Query("q") q?: string,
@@ -22,6 +30,7 @@ export class ContentController {
   }
 
   @Get(":slug")
+  @Header("Cache-Control", "no-store")
   async detail(@Param("slug") slug: string) {
     const post = await this.content.getPublicBySlug(slug);
     if (!post) throw new NotFoundException("内容不存在或未发布");

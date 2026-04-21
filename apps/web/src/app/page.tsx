@@ -4,6 +4,8 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site/SiteShell";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 /** 首页大横幅：全宽背景（legacy）+ 右侧装饰图（仓库内静态图） */
 const HERO_BG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAS3SAFejB65wTgxTMPoB4lEclet0pe888iWrPirneNhwE3POyu8NJHLrqmK4WFeMnCUO3jQ2gnMhvcSD5XrjiaW4VS5TDSGCpUftcxl-1J_xkK2LKKffSaoNBWp3YjjU5YV64RXTqyjwPL21SMZHZzrLqCTzrN7al_Mcx_-gD37jX302hVMhkJP5e42STa_W1QMQ3mn0Gv8C_yQbq_s5eNmWJbIpB6xvHJKxHeyynDRlWkDaunGcateaMxsz2sMMEy1nYF2TVx9mDw";
